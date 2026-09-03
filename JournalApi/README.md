@@ -11,3 +11,6 @@ An empty command will print `Hello ASP.NET!` to the command line.
 - `/echo?msg=`[message]
 	- Returns `{"message":"`(provided message)`","length":`(string length)`}` if provided a non-empty non-whitespace string
 	- Otherwise returns	`{"error":"Query parameter 'msg' is required."}`
+
+Example:
+[image](https://github.com/EnlightenmentMakesGames/Fall-2026-ASP.NET/blob/master/JournalApi/example.png?raw=true)
