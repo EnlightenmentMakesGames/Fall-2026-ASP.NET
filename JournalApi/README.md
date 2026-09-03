@@ -13,4 +13,4 @@ An empty command will print `Hello ASP.NET!` to the command line.
 	- Otherwise returns	`{"error":"Query parameter 'msg' is required."}`
 
 Example:
-[image](https://github.com/EnlightenmentMakesGames/Fall-2026-ASP.NET/blob/master/JournalApi/example.png?raw=true)
+![Example screenshot](example.png)
