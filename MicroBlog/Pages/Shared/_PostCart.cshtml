@@ -1,0 +1,18 @@
+@model MicroBlog.Models.Post
+
+<article class="post-card">
+    <header class="post-card__header">
+        <h2 class="post-card__title">
+            <a asp-page="/Details" asp-route-id="@Model.Id">@Model.Title</a>
+        </h2>
+        <small class="post-card__date">@Model.CreatedUtc.ToLocalTime()</small>
+    </header>
+    <p class="post-card__excerpt">
+        @((Model.Body?.Length ?? 0) > 160 ? Model.Body.Substring(0, 160) + "..." : Model.Body)
+    </p>
+    @if ((Model.Body?.Length ?? 0) > 160) {
+        <a class="post-card__more" asp-page="/Details" asp-route-id="@Model.Id">Read More</a>
+    }
+    <hr>
+
+</article>
