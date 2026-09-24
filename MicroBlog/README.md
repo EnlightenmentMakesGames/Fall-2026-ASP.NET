@@ -1,10 +1,10 @@
 Screenshots:
 
 Index Page:
-![Index Page](index.png)
+![Index Page](index.PNG)
 
 Post Creation Page:
-![Post Creation Page](create.png)
+![Post Creation Page](create.PNG)
 
 Post Details Page:
-![Post Details Page](details.png)
+![Post Details Page](details.PNG)
