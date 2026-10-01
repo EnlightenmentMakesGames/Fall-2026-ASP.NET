@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "First Post!",
+    "body": "This is the first post.",
+    "createdUtc": "2026-09-24T00:26:37.5060159Z"
+  },
+  {
+    "id": 2,
+    "title": "The Second Post",
+    "body": "This post is objectively better than the first post.",
+    "createdUtc": "2026-09-24T00:28:11.4205547Z"
+  },
+  {
+    "id": 3,
+    "title": "third post",
+    "body": "lol imagine ranking your posts",
+    "createdUtc": "2026-09-24T00:28:24.5839371Z"
+  },
+  {
+    "id": 4,
+    "title": "First Amendment",
+    "body": "Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.",
+    "createdUtc": "2026-09-24T00:44:12.1985022Z"
+  },
+  {
+    "id": 5,
+    "title": "I have created yet another post",
+    "body": "wahoo",
+    "createdUtc": "2026-09-24T01:21:19.5606369Z"
+  }
+]

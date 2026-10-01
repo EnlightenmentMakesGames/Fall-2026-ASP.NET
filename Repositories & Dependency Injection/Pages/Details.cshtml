@@ -1,0 +1,18 @@
+@page "{id:int}"
+@model MicroBlog.Pages.DetailsModel
+@{
+    ViewData["Title"] = Model.Post?.Title ?? "Post";
+}
+
+@if (Model.Post is null) {
+    <p>Post not found.</p>
+} else {
+    <article class="post">
+        <h1>@Model.Post.Title</h1>
+        <p class="meta">@Model.Post.CreatedUtc.ToLocalTime()</p>
+        <div class="body">
+            @Model.Post.Body
+        </div>
+        <p><a asp-page="/Index">Back to list</a></p>
+    </article>
+}
