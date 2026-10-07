@@ -1,0 +1,38 @@
+@page "{id:int}"
+@model MicroBlog.Pages.DetailsModel
+@using Microsoft.Extensions.Options
+@using MicroBlog.Options
+@inject IOptions<SiteOptions> Site
+
+    @{
+    ViewData["Title"] = Model.Post?.Title ?? "Post";
+    }
+
+    @if (Model.Post is null) {
+    <p>Post not found.</p>
+    } else {
+    <article class="post">
+        <h1>@Model.Post.Title</h1>
+        <p class="meta">@Model.Post.CreatedUtc.ToLocalTime();</p>
+        <div class="body">
+            @Model.Post.Body
+        </div>
+    </article>
+        if (Site.Value.EnableComments) {
+        <section class="comments">
+            <h2>Leave a Comment</h2>
+            <form method="post">
+                <div class="form-row">
+                    <label for="comment">Comment</label>
+                    <textarea id="comment" name="comment" rows="4"></textarea>
+                </div>
+                <button type="submit" disabled>Post (demo only)</button>
+                <p class="meta">Comments are enabled but will not be saved.</p>
+            </form>
+        </section>
+        } else {
+        <p class="meta">Comments are disabled by configuration.</p>
+        }
+
+    <p><a asp-page="/Index">Back to list</a></p>
+    }

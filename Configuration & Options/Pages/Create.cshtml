@@ -1,0 +1,23 @@
+@page
+@model MicroBlog.Pages.CreateModel
+@{
+    ViewData["Title"] = "New Post";
+}
+
+<h1>New Post</h1>
+
+<form method="post">
+    <div class="form-row">
+        <label asp-for="Form.Title"></label>
+        <input asp-for="Form.Title" />
+        <span class="validation" asp-validation-for="Form.Title"></span>
+    </div>
+
+    <div class="form-row">
+        <label asp-for="Form.Body"></label>
+        <textarea asp-for="Form.Body" rows="8"></textarea>
+        <span class="validation" asp-validation-for="Form.Body"></span>
+    </div>
+
+    <button type="submit">Publish</button>
+</form>
