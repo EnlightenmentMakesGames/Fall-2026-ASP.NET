@@ -1,0 +1,8 @@
+@model BlogWithEf.Models.Post
+@{
+    ViewData["Title"] = "Post Details";
+}
+<h1>@Model.Title</h1>
+<p class="text-muted">@Model.CreatedUtc.ToLocalTime()</p>
+<pre style="white-space:pre-wrap;">@Model.Body</pre>
+<p><a asp-action="index">Back</a></p>

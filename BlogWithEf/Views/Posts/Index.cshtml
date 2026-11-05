@@ -1,0 +1,25 @@
+@model IEnumerable<BlogWithEf.Models.Post>
+@{
+    ViewData["Title"] = "Posts";
+}
+<h1>Posts</h1>
+<p><a asp-action="Create" class="btn btn-primary">New Post</a></p>
+
+<table class="table">
+    <thead>
+        <tr><th>Title</th><th>Created</th><th></th></tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model) {
+            <tr>
+                <td>@p.Title</td>
+                <td>@p.CreatedUtc.ToLocalTime()</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@p.Id">View</a> | 
+                    <a asp-action="Edit" asp-route-id="@p.Id">Edit</a> | 
+                    <a asp-action="Delete" asp-route-id="@p.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
