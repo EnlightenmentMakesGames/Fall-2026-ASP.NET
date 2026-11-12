@@ -1,0 +1,42 @@
+@page
+@model ApiDemo.Pages.DashboardModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h1>Blog Dashboard</h1>
+
+<div class="alert alert-info">
+    Total posts: <strong id="postCount">Loading...</strong>
+</div>
+
+<ul id="recentPosts" class="list-group"></ul>
+
+@section Scripts{
+    <script>
+        async function loadPosts() {
+            try {
+                const res = await fetch('/api/posts');
+                if (!res.ok) throw new Error('Network response was not ok');
+                const posts = await res.json();
+
+                //Display the post count
+                document.getElementById('postCount').textContent = posts.length;
+
+                //Show the 5 most recent titles
+                const list = document.getElementById('recentPosts');
+                list.innerHTML = '';
+                posts.slice(0, 5).forEach(p => {
+                    const li = document.createElement('li');
+                    li.textContent = p.title;
+                    li.className = 'list-group-item';
+                    list.appendChild(li);
+                });
+            } catch (err) {
+                console.error(err);
+                document.getElementById('postCount').textContent = 'Error loading posts';
+            }
+        }
+        loadPosts();
+    </script>
+}
