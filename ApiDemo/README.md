@@ -4,4 +4,4 @@ New posts can be added by inputing the following command while the demo is runni
 `curl -X POST `(host address)`/api/posts -H "Content-Type: application/json" -d "{\"title\":\"`(post title)`\",\"body\":\"`[post body]`\"}"`
 
 Dashboard page:
-!(Dashboard Page)[Dashboard.PNG]
+![Dashboard Page](Dashboard.PNG)
