@@ -1,0 +1,27 @@
+@page
+@model ImageLibrary.Pages.UploadModel
+@{
+    ViewData["Title"] = "Upload Image";
+}
+
+<h1>Upload Image</h1>
+
+<form method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Image File (.jpg, .png, max 2 MB)</label>
+        <input asp-for="Image" type="file" class="form-control" />
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+
+<div asp-validation-summary="ModelOnly" class="test-danger"></div>
